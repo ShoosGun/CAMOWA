@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8034C813-8D42-464F-8F65-11D8F8C8C37B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CAMOWA</RootNamespace>
+    <AssemblyName>CAMOWA</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;CODE_ANALYSIS; OUTER_WILDS_ALPHA</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\OuterWilds Alpha 1_2\BepInEx\core\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\OuterWilds Alpha 1_2\OuterWilds_Alpha_1_2_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>..\..\..\..\..\OuterWilds Alpha 1_2\BepInEx\core\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\OuterWilds Alpha 1_2\OuterWilds_Alpha_1_2_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessHelpers\OWInputHelper.cs" />
+    <Compile Include="CAMOWAStart.cs" />
+    <Compile Include="FileImporting\FbxImporter\AnimationRead\FBXAnimation.cs" />
+    <Compile Include="FileImporting\FbxImporter\AnimationRead\FBXAnimationCurves.cs" />
+    <Compile Include="FileImporting\FbxImporter\AnimationRead\FBXAnimationNodes.cs" />
+    <Compile Include="FileImporting\FbxImporter\FBXFileParser.cs" />
+    <Compile Include="FileImporting\FbxImporter\GenericFBXNodeRead\FBXPacketReader.cs" />
+    <Compile Include="FileImporting\FbxImporter\GenericFBXNodeRead\FBXProperty.cs" />
+    <Compile Include="FileImporting\FbxImporter\GenericFBXNodeRead\FBXRecordNode.cs" />
+    <Compile Include="FileImporting\FbxImporter\Ionic.Zlib\CommonSrc\CRC32.cs" />
+    <Compile Include="FileImporting\FbxImporter\Ionic.Zlib\CommonSrc\Iso8859Dash1Encoding.cs" />
+    <Compile Include="FileImporting\FbxImporter\Ionic.Zlib\Zlib\Deflate.cs" />
+    <Compile Include="FileImporting\FbxImporter\Ionic.Zlib\Zlib\DeflateStream.cs" />
+    <Compile Include="FileImporting\FbxImporter\Ionic.Zlib\Zlib\GZipStream.cs" />
+    <Compile Include="FileImporting\FbxImporter\Ionic.Zlib\Zlib\Inflate.cs" />
+    <Compile Include="FileImporting\FbxImporter\Ionic.Zlib\Zlib\InfTree.cs" />
+    <Compile Include="FileImporting\FbxImporter\Ionic.Zlib\Zlib\ParallelDeflateOutputStream.cs" />
+    <Compile Include="FileImporting\FbxImporter\Ionic.Zlib\Zlib\Tree.cs" />
+    <Compile Include="FileImporting\FbxImporter\Ionic.Zlib\Zlib\Zlib.cs" />
+    <Compile Include="FileImporting\FbxImporter\Ionic.Zlib\Zlib\ZlibBaseStream.cs" />
+    <Compile Include="FileImporting\FbxImporter\Ionic.Zlib\Zlib\ZlibCodec.cs" />
+    <Compile Include="FileImporting\FbxImporter\Ionic.Zlib\Zlib\ZlibConstants.cs" />
+    <Compile Include="FileImporting\FbxImporter\Ionic.Zlib\Zlib\ZlibStream.cs" />
+    <Compile Include="FileImporting\FileImporter.cs" />
+    <Compile Include="FileImporting\ObjImporter.cs" />
+    <Compile Include="FileImporting\WAVImporter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SceneLoading.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FileImporting\FbxImporter\Ionic.Zlib\Zlib\LICENSE.jzlib.txt" />
+    <Content Include="FileImporting\FbxImporter\Ionic.Zlib\Zlib\License.zlib.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
