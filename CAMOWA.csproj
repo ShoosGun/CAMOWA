@@ -83,5 +83,10 @@
     <Content Include="FileImporting\FbxImporter\Ionic.Zlib\Zlib\LICENSE.jzlib.txt" />
     <Content Include="FileImporting\FbxImporter\Ionic.Zlib\Zlib\License.zlib.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="manifest.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
