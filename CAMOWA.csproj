@@ -99,7 +99,6 @@
   <ItemGroup>
     <Compile Include="AccessHelpers\OWInputHelper.cs" />
     <Compile Include="CAMOWAStart.cs" />
-    <Compile Include="EnableMod.cs" />
     <Compile Include="FileImporting\FbxImporter\AnimationRead\FBXAnimation.cs" />
     <Compile Include="FileImporting\FbxImporter\AnimationRead\FBXAnimationCurves.cs" />
     <Compile Include="FileImporting\FbxImporter\AnimationRead\FBXAnimationNodes.cs" />
