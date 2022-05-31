@@ -14,7 +14,13 @@ namespace CAMOWA
 
         protected OWMMConfig CheckModConfig() 
         {
-            string jsonConfigFile = File.ReadAllText(Path.Combine(Info.Location,OWMMConfigFile));
+            string pathToConfig = Path.Combine(Info.Location, OWMMConfigFile);
+            if(!File.Exists(pathToConfig))
+            {
+                IsModEnabled = true;
+                return  new OWMMConfig();
+            }
+            string jsonConfigFile = File.ReadAllText(pathToConfig);
             OWMMConfig config = JsonConvert.DeserializeObject<OWMMConfig>(jsonConfigFile);
             IsModEnabled = config.enabled;
             return config;
@@ -37,6 +43,6 @@ namespace CAMOWA
 
     public class OWMMConfig 
     {
-        public bool enabled;
+        public bool enabled = true;
     }
 }
