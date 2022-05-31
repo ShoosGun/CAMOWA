@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace CAMOWA.AccessHelpers
 {
+    [Obsolete("Use the publicized Nuget instead")]
     public static class OWInputHelper
     {
         public static ref HashSet<InputCommand> LastInputs() { return ref HarmonyLib.AccessTools.StaticFieldRefAccess<HashSet<InputCommand>>(typeof(OWInput), "_lastInputs"); }
